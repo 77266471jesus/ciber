@@ -1,0 +1,85 @@
+.portada{
+    width: 100%;
+    height: 100VH;
+}
+.color_cibertel_texto{
+    color: #00DA00;
+}
+.color_cibertel_fondo{
+    color: #00DA00;
+}
+.texto_header_h1{
+    transition: all 0.5s ease; 
+    color: #00DA00;
+    font-size: 28px;
+    font-weight: 400; 
+    text-shadow: 5px 6px 7px #070707;      
+}
+.texto_header_h2{
+    transition: all 0.5s ease;
+    color: blanchedalmond;
+    font-size: 35px;
+    font-weight: 600;
+    text-shadow: 3px 4px 5px #c0c0c0;     
+}
+/* servcios */
+.service-body{
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+.service-body h3{
+    color: rgb(104, 104, 104);
+}
+.service-body h1{
+    font-weight: 800;
+}
+.galery-service{
+    height: 250px;
+    width: 220px;
+    margin: 10px;       
+    text-align: center;
+    color: #03658C;   
+}
+.image-port{
+    width: 100%;
+    height: 250px;
+    transition-duration: 400ms;
+    opacity: 0;
+}
+.galery-icon{    
+    width: 80px;
+    height: 80px;     
+}
+.image-port p{
+    color: white;
+}
+.image-port:hover{
+    opacity: 1;
+    transition: transform 2s;
+    transform: scale(0.95);    
+    background-color: rgba(0, 0, 0, 0.507);
+}
+.image-port h2:hover{
+    
+    transition-duration: 400ms;
+}
+/* fin servicios */
+
+
+@media screen and (max-width:900px){
+    .texto_header_h1{
+        font-size: 24px;     
+    }
+    .texto_header_h2{
+        font-size: 30px; 
+    }
+}
+@media screen and (max-width:700px){
+    .texto_header_h1{
+        font-size: 19px;     
+    }
+    .texto_header_h2{
+        font-size: 24px; 
+    }
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ public_path('css/tailwind.css') }}" type="text/css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Factura</title>
+    <style>
+        .header {
+            width: 100%;
+            height: 80px;
+        }
+
+        .header .datos_empresa {
+            width: 240px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        h2 {
+            font-size: 14px;
+            margin-top: -8px;
+        }
+
+        .datos_empresa h3 {
+            margin-top: -8px;
+            font-size: 12px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 100;
+            color: rgb(51, 51, 51);
+        }
+
+        .header .datos_comprobante {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 240px;
+            margin-top: 20px;
+        }
+
+        .nit {
+            margin-left: 80px;
+            font-weight: 100;
+            color: rgb(51, 51, 51);
+        }
+
+        .numero {
+            margin-left: 20px;
+            font-weight: 100;
+            color: rgb(51, 51, 51);
+        }
+
+        .tipo_comprobante {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tipo_comprobante h1 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-top: 30px;
+            letter-spacing: 5px;
+        }
+
+        .cliente {
+            width: 100%;
+        }
+
+        .datos_cliente {
+            position: absolute;
+            height: 30px;
+            width: 150px;
+        }
+
+        .datos_cliente_datos {
+            position: absolute;
+            height: 30px;
+            width: 300px;
+            margin-left: 150px;
+        }
+
+        .datos_cliente_nit {
+            position: absolute;
+            height: 30px;
+            width: 50px;
+            margin-left: 450px;
+        }
+
+        .datos_cliente_numeros {
+            position: absolute;
+            height: 30px;
+            width: 200px;
+            margin-left: 520px;
+        }
+
+        .tabla {
+            margin-top: 60px;
+            width: 100%;
+        }
+
+        .tabla_detalle {
+            width: 100%;
+        }
+        .tabla_header{
+            text-align: center;
+        }
+        .tabla_body{
+            text-align: center;
+        }
+        .title {
+            font-size: 12px;
+        }
+        .parrafo {
+            font-size: 12px;
+        }
+        .producto{
+            font-size: 12px;
+            text-align: left;
+        }
+        .comprobante_footer{
+            width: 100%;
+            margin: 30px, 50px;
+        }
+        .comprobante_footer p{
+            padding: 10px;
+            font-size: 12px;
+            text-align: justify;
+        }
+        .comprobante_footer span{
+            padding: 10px;
+            font-size: 11px;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header d-flex flex">
+        <div class="datos_empresa">
+            <h1>CIBERTEL S.R.L.</h1>
+            <h2>CASA MATRIZ.</h2>
+            <h3>Avenida 6 de marzo N° 222, Edificio Luisa, Piso 2, Of. 200, Zona Villa Bolívar B</h3>
+        </div>
+        <div class="datos_comprobante">
+            <div>
+                <h2>NIT.: <span class="nit">0129660357</span> </h2>
+                <h2>FACTURA N°: <span class="numero">00{{ $venta->comprobante }}</span> </h2>
+            </div>
+        </div>
+    </div>
+    <div class="tipo_comprobante">
+        <h1>FACTURA</h1>
+    </div>
+    <div class="cliente">
+        <div class="datos_cliente">
+            <h2>Fecha:</h2>
+            <h2>Nombre/Razón Social:</h2>
+        </div>
+        <div class="datos_cliente_datos">
+            <h2>{{ $venta->fecha }}</h2>
+            <h2>{{ $venta->cliente->nombre }}</h2>
+        </div>
+        <div class="datos_cliente_nit">
+            <h2>NIT/CI:</h2>
+            <h2>Direccion:</h2>
+        </div>
+        <div class="datos_cliente_numeros">
+            <h2>{{ $venta->cliente->documento }}</h2>
+            <h2>{{ $venta->cliente->direccion }}</h2>
+        </div>
+    </div>
+    <div class="tabla">
+        <table border="2" class="tabla_detalle">
+            <thead class="tabla_header">
+                <tr>
+                    <th class="title">CODIGO</th>
+                    <th class="title">CANTIDAD</th>
+                    <th class="title">DESCRIPCIÓN</th>
+                    <th class="title">PRECIO</th>
+                    <th class="title">DESCUENTO</th>
+                    <th class="title">SUBTOTAL</th>
+                </tr>
+            </thead>
+            <tbody class="tabla_body">
+                @foreach ($venta->detalleVentas as $detalle)
+                    <tr>
+                        <td class="parrafo">{{ $detalle->producto->codigo }}</td>
+                        <td class="parrafo">{{ $detalle->cantidad}}</td>
+                        <td class="producto">{{ $detalle->producto->nombre }}</td>
+                        <td class="parrafo">{{ $detalle->precio_venta}}</td>
+                        <td class="parrafo">{{ $detalle->descuento}}</td>
+                        <td class="parrafo">{{ $detalle->subtotal}}</td>
+                    </tr>
+                @endforeach
+                <tr>
+                    <td colspan="4" rowspan="2" class="parrafo"></td>                    
+                    <th class="title">SUBTOTAL:</th>
+                    <td class="parrafo">{{ $venta->total_venta }}</td>
+                </tr>
+                <tr>                  
+                    <th class="title">TOTAL:</th>
+                    <td class="parrafo">{{ $venta->total}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="comprobante_footer">
+        <p>ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS, EL USO ILÍCITO SERÁ SANCIONADO PENALMENTE DE ACUERDO A LEY
+            Ley N° 453: El proveedor debe brindar atención sin discriminación, con respeto, calidez y cordialidad a los usuarios y consumidores.</p>
+            <span>“Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una modalidad de facturación en línea”
+            </span>
+    </div>
+
+</body>
+
+</html>

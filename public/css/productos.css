@@ -1,0 +1,101 @@
+/* botones de activacion */
+.active-categoria {
+    pointer-events: none;
+    background: rgb(6, 20, 36);
+    ;
+}
+
+/* principal  */
+.menu-admin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 87vh;
+    width: 0px;
+    margin-top: 80px;
+    background: rgb(253, 252, 252);
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    color: rgb(190, 179, 179);
+    transition: all 0.5s ease;
+}
+
+/* para el boton en pantalla normal */
+.menu-admin.close {
+    width: 260px;
+}
+
+/* seccion de menu del usuario */
+.nav-menu-user {
+    position: fixed;
+    background: #dfe2e2;
+    height: 60px;
+    left: 0;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.menu-admin.close~.nav-menu-user {
+    width: calc(100% - 260px);
+    left: 260px;
+}
+
+/* contenido dentro menu  */
+.menu-admin .menu-admin-content {
+    display: none;
+}
+
+.menu-admin.close .menu-admin-content {
+    display: block;
+}
+
+/* links de la pagina pricipal */
+.nav-links-cont {
+    height: 90vh;
+    position: relative;
+    padding: 0px 0 100px 0;
+    overflow-y: scroll;
+}
+
+.nav-links-cont::-webkit-scrollbar {
+    display: none;
+}
+
+/* para el color de los links el hover y normal */
+.link-color {
+    color: #414141;
+    transition: all 0.3s ease;
+}
+
+.link-color:hover {
+    color: white;
+    background: rgb(3, 145, 10)
+}
+
+.input_search {
+    box-sizing: border-box;
+    color: #191919;
+    padding: 15px 15px 15px 35px;
+    width: 100%;
+}
+
+.input_icon {
+    color: #191919;
+    position: absolute;
+    font-size: 22px;
+    height: 20px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+/* para la pantalla responsive */
+@media (max-width: 768px) {
+    .menu-admin {
+        margin-top: 140px;
+    }
+
+    .menu-admin.close~.nav-menu-user {
+        width: 100%;
+        left: 0;
+        transition: all 0.1s ease;
+    }
+}

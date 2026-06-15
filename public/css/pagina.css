@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body{
+	margin:0;
+	font-family: sans-serif;
+	overflow-x: hidden;
+    background-color: #F2F2F2;
+}
+/* codigo de header */
+header{
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    z-index: 30;
+    background: rgb(17, 16, 27);
+    /* background: rgba(0, 0, 0, 0); */
+    transition-duration: 500ms;
+    font-family: 'Roboto', sans-serif; ;
+    /* opacity: 0.7; */
+}
+.menu_scroll{
+    background-color: rgb(17, 16, 27);
+    transition-duration: 500ms;
+    opacity: 1;
+}
+.color_menu_scroll{
+    background-color: rgb(17, 16, 27);
+}
+header.menu_scroll .links, .container-boton{
+			color: #F2F2F2;
+}
+/* logo  */
+.logo{
+    padding: 5px 0px;
+    width: 210px;
+    height: 70px;
+    margin-left: 5px;
+    transition: all 0.5s ease;
+}
+.logo img{
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+}
+.color-c{
+    color: #00DA00;
+}
+.h1-c{
+    color: #fff;
+    font-size: 18px;
+}
+.h2-c{
+    color: #fff;
+    font-size: 9px;
+}
+/* fin logo  */
+.list{
+    margin-right: calc(0px * var(--tw-space-x-reverse));
+    margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 8px;
+}
+.list li{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cool-link::after{
+    display: flex;    
+    align-items: center;
+    justify-content: center;  
+    content: '';
+    position: relative;    
+    width: 0;
+    height: 2px;
+    background: #03658C;
+    transition: width .3s;
+    margin-left: 0px;
+}
+.cool-link:hover::after{
+    width: 100%;
+    transition: width .3s;
+}
+.links{
+    width: auto;
+    /* color: #696565cc; */
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    
+    transition-duration: 500ms;
+    transform: translateX(-50%) translateY(-50%);
+   
+}
+.list a:hover{
+    color: #1077b3;
+    transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 400ms;
+    /* text-decoration: underline; */
+}
+.menubar{
+    margin-right: 26px;
+    --tw-border-opacity: 0.5;
+}
+.menubar button{
+    color: white;
+    font-size: 20px;   
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+/* header reponsivo */
+.menuresp{
+    margin-top: 80px;
+    padding-top: 16px;
+    z-index: 20;
+    position: fixed;
+    background-color: rgba(17, 16, 27, 0.877);
+    height: 90vh;
+    width: 100%;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+    padding-bottom: 50px;
+    overflow-y:scroll;   
+}
+.menuresp::-webkit-scrollbar{
+    display: none;
+  }
+.links_reps{
+    width: 100%;
+    color: #ffffff;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    text-align: center;
+    font-weight: 500;
+    transition-duration: 400ms;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.menuresp a:hover{
+    color: #00AAD8;
+    transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 400ms;
+    
+}
+.session_text i{
+    color: rgb(24, 24, 24);
+    transition: all 0.4s ease;
+}
+.session_text span{
+    color: rgb(24, 24, 24);
+    transition: all 0.4s ease;
+}
+.session_text:hover i{
+    color: rgb(233, 233, 233);
+}
+.session_text:hover span{
+    color: rgb(233, 233, 233);
+}
+/* fin responsivo */
+/* fin de header disño */
+/* redes sociales  */
+.cont-social{
+    position: fixed;
+    height: 260px;
+    width: 50px;
+    margin: 320px 0 0px 0px;
+    z-index: 10;
+}
+.cont-social ul {
+    margin-left: 0px;
+    width: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    position: fixed;    
+}
+.cont-social li{
+    position: relative;    
+    background: rgba(0,0,0,0.8);
+    list-style: none;
+    padding: 5px 0;
+    margin: 3px 0;
+    margin-left: -125px;
+    transition: .5s;
+    width: 170px;
+    border-radius: 0 10px 10px 0;    
+}
+.cont-social li:hover:nth-child(1){
+    background: #3b5998;
+}
+.cont-social li:hover:nth-child(2){
+    background: #55acee;
+}
+.cont-social li:hover:nth-child(3){
+    background: #bb0000;
+}
+.cont-social li:hover:nth-child(4){
+    background: #4dc247;
+}
+.cont-social li:hover:nth-child(5){
+    background: #125688;
+}
+.cont-social li:hover{
+    transform: translateX(-30px);
+    margin: 0;
+}
+.cont-social a{
+    font-weight: bold;
+    color: #fff;
+    font-family: sans-serif;
+    text-decoration: none;
+    margin-left: 35px;
+}
+.cont-social i{
+    text-align: end;
+    margin-left: 5px;
+    padding: 10px 10px;
+    border-radius: 50%;
+    color: #000;
+    background: #fff;
+}
+.icon-cont{
+    font-size: 16px;
+}
+.facebook{
+    position: relative;
+    left:11px;
+}
+.twitter{
+    position: relative;
+    left: 31px;
+}
+.youtube{
+    position: relative;
+    left: 13px;
+}
+.whatsapp{
+    position: relative;
+    left: 7px;
+}
+.instagram{
+    position: relative;
+    left: 8px;
+}
+.no_seleccionable {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+/* fin redes sociales */
+.chatbot_asis{
+    background: #0079FE;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+}
+@media screen and (max-width:767px){
+    .logo{
+        width: 55px;
+    }    
+}
+
